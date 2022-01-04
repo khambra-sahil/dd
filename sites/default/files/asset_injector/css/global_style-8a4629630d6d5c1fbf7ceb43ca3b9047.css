@@ -1,0 +1,13 @@
+.button, .btn, input[type="submit"]{
+  border-radius: 6px;
+}
+#block-user-account-menu div ul li{
+  background: #FFFFFF;
+}
+#block-user-account-menu div ul li a{
+  color: #000000;
+}
+.cart--cart-block .cart-block-count{
+  background: #FFF;
+  color: #000;
+}

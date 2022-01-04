@@ -1,0 +1,328 @@
+.slide-content-body .field-body h2{
+  font-weight: 500;
+  font-size: 52px;
+}
+.slide-button{
+  margin-top: 3.5rem !important;
+}
+.slide-button-link{
+  background-color: #E5007D;
+  color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 4px;
+  border: none !important;
+  font-weight: 500;
+}
+.slide-button-link:hover{
+  color: #FFF;
+  background-color: #333;
+}
+.slide-content-main{
+  overflow: inherit;
+}
+.new_bg{
+  padding: 24px 0px;
+  background-image:url(../../../../../sites/default/files/images/bg/collections.png);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.new_bg h2{
+  font-size:52px;
+  margin-top: 22px;
+}
+.menu-parent .menu-item{
+  background: #E5007D;
+}
+.new_bg.categories{
+  background-image:url(../../../../../sites/default/files/images/bg/browse.png);
+  background-size: 60%;
+}
+.new_bg.trending{
+  background-image:url('');
+}
+.promotion-meta-wrap{
+  position: relative;
+}
+.special-discount h2{
+  font-size: 42px;
+}
+.discount-button{
+  background: #101010 !important;
+  border-color: #101010 !important;
+  color: #FFF;
+}
+.discount-button:hover{
+  background: #FFF !important;
+  border-color: #FFF !important;
+  color: #101010;
+}
+
+/*FLIP CARD CSS*/
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-bottom: 30px !important;
+}
+.flip-card div{
+  border-radius: 12px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 1px 2px 12px 0 rgb(201, 201, 201);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  background-color: #FFF;
+  color: black;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.card-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.2;
+}
+.review-name{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.back-content h3{
+  line-height: 1.5;
+}
+.back-content p{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #E5007D;
+}
+
+/*TAB CSS*/
+.home-tabs{
+  justify-content: center;
+  border: none;
+  font-size: 18px;
+}
+.home-tabs li a, .home-tabs li a:hover{
+  border: none !important;
+}
+.home-tab-content{
+  text-align: center;
+  border: none;
+}
+.home-tabs li .active{
+  color: #E5007D !important;
+}
+.tab-images div{
+  position: relative;
+}
+.tab-images .image2,.tab-images .image3{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.tab-images .image1,.tab-images .image4{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.active-dot{
+  width: 10px;
+  height: 10px;
+  background: #E5007D;
+  margin: auto;
+  border-radius: 50%;
+  margin-bottom: 4px;
+  margin-top: -6px;
+  display: none;
+}
+.home-tabs li .active + .active-dot{
+  display: block !important;
+}
+.exp-now{
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  background: #e5007d;
+  color: white;
+  border-color: #e5007d;
+  transform: scale(0);
+  transition: all .3s ease;
+}
+.tab-images .image1:hover .exp-now{
+  transform: scale(1);
+}
+.tab-images .image2:hover .exp-now{
+  transform: scale(1);
+}
+.tab-images .image3:hover .exp-now{
+  transform: scale(1);
+}
+.tab-images .image4:hover .exp-now{
+  transform: scale(1);
+}
+
+/*HOME BLOGS*/
+.home-blogs .row div{
+  padding: 0px !important;
+}
+.home-blogs .row .blog-text{
+  background: #F6B1B5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-blogs .row .blog-text .content{
+  padding: 50px !important;
+  text-align: left;
+}
+.home-blogs .blog-1 .blog-text:after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 46%;
+  right: -28px;
+  z-index: 1;
+  border-top: solid 20px #F6B1B5;
+  border-left: solid 14px transparent;
+  border-right: solid 12px transparent;
+  border-bottom: solid 12px transparent;
+  transform: rotate(270deg);
+}
+.home-blogs .blog-2 .blog-text:after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 46%;
+  left: -28px;
+  z-index: 1;
+  border-top: solid 20px #F6B1B5;
+  border-left: solid 14px transparent;
+  border-right: solid 12px transparent;
+  border-bottom: solid 12px transparent;
+  transform: rotate(90deg);
+}
+@media only screen and (max-width: 992px){
+  .flip-card{
+    width: 200px;
+    height: 200px;
+  }
+  .review-name + img{
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .back-content h3{
+    font-size: 14px;
+  }
+  .back-content p{
+    font-size: 12px;
+  }
+  .review-name{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 769px){
+  #main-menu{
+    padding-bottom: 12px;
+    background: #e5007d;
+  }
+  .slide-content-body .field-body h2{
+    font-size:26px;
+  }
+  .slide-content-body{
+    margin-bottom: 32px;
+  }
+  .new_bg{
+    background-size: 85%;
+  }
+  .new_bg h2{
+    font-size:26px;
+    margin-top: 12px;
+  }
+  .special-discount h2{
+    font-size:26px;
+  }
+  .flip-card{
+    width: 300px;
+    height: 300px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .review-name + img{
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .back-content h3{
+    font-size: 23px;
+  }
+  .back-content p{
+    font-size: 16px;
+  }
+  .review-name{
+    font-size: 18px;
+  }
+  .home-blogs .blog-1 .blog-text:after, .home-blogs .blog-2 .blog-text:after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    left: 45%;
+    z-index: 1;
+    border-top: solid 20px #F6B1B5;
+    border-left: solid 14px transparent;
+    border-right: solid 12px transparent;
+    border-bottom: solid 12px transparent;
+    transform: rotate(180deg);
+  }
+}
+
