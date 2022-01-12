@@ -1,8 +1,0 @@
-administer coming soon:
-  title: 'Administer coming soon'
-  description: 'Administer the coming soon module.'
-  restrict access: TRUE
-export subscribers:
-  title: 'Export subscribers'
-  description: 'Be able to export subscribers when "enable guests notification" option is enabled.'
-  restrict access: TRUE

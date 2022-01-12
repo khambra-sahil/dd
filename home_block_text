@@ -1,0 +1,84 @@
+<ul class="nav nav-tabs home-tabs" role="tablist">
+	<li class="nav-item">
+		<a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">SONA</a>
+                <div class="active-dot"></div>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">BIBA</a>
+                <div class="active-dot"></div>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">BAGH</a>
+                <div class="active-dot"></div>
+	</li>
+</ul>
+<!-- Tab contents -->
+<div class="tab-content home-tab-content">
+        <!--SONA Tab-->
+	<div class="tab-pane active fade show" id="tabs-1" role="tabpanel">
+             <div class="row">
+		<div class="col-md-6 col-xs-12 tab-images" >
+                    <div class="image1">
+                     <img src="./sites/default/files/home_page_block/GU4A5057.jpg" alt="image1" width="540px" height="400px"/>
+                     <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                    <div class="image2">
+                       <img src="./sites/default/files/home_page_block/GU4A5059.jpg" alt="image2" width="540px" height="200px"/>
+                       <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 tab-images" >
+                     <div class="image3">
+                      <img src="./sites/default/files/home_page_block/GU4A5060.jpg" alt="image3" width="540px" height="200px"/>
+                      <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+              </div>
+	</div>
+         <!--BIBA Tab-->
+	<div class="tab-pane fade" id="tabs-2" role="tabpanel">
+		<div class="row">
+		<div class="col-md-6 col-xs-12 tab-images" >
+                    <div class="image1">
+                     <img src="./sites/default/files/home_page_block" alt="image1" width="540px" height="400px"/>
+                     <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                    <div class="image2">
+                       <img src="./sites/default/files/home_page_block" alt="image2" width="540px" height="200px"/>
+                       <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 tab-images" >
+                     <div class="image3">
+                      <img src="./sites/default/files/home_page_block" alt="image3" width="540px" height="200px"/>
+                      <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+              </div>
+	</div>
+           <!--BAGH Tab-->
+	<div class="tab-pane fade" id="tabs-3" role="tabpanel">
+		<div class="row">
+		<div class="col-md-6 col-xs-12 tab-images" >
+                    <div class="image1">
+                     <img src="./sites/default/files/home_page_block" alt="image1" width="540px" height="400px"/>
+                     <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                    <div class="image2">
+                       <img src="./sites/default/files/home_page_block" alt="image2" width="540px" height="200px"/>
+                       <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12 tab-images" >
+                     <div class="image3">
+                      <img src="./sites/default/files/home_page_block" alt="image3" width="540px" height="200px"/>
+                      <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                    <div class="image4">
+                      <img src="./sites/default/files/images/banjaran/image4.png" alt="image1" width="540px" height="400px"/>
+                      <button class="button button--primary exp-now">Explore</button>
+                    </div>
+                </div>
+              </div>
+	</div>
+</div>
