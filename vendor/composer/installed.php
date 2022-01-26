@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '95decaa0953a19e704c649b99101a502e2d70c95',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -596,12 +596,12 @@
             ),
         ),
         'drupal/legacy-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '95decaa0953a19e704c649b99101a502e2d70c95',
             'dev_requirement' => false,
         ),
         'drupal/link' => array(
@@ -768,6 +768,15 @@
             'replaced' => array(
                 0 => '9.1.5',
             ),
+        ),
+        'drupal/smtp' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/smtp',
+            'aliases' => array(),
+            'reference' => '8.x-1.0',
+            'dev_requirement' => false,
         ),
         'drupal/standard' => array(
             'dev_requirement' => false,
@@ -1013,6 +1022,15 @@
             'install_path' => __DIR__ . '/../pear/pear_exception',
             'aliases' => array(),
             'reference' => 'dbb42a5a0e45f3adcf99babfb2a1ba77b8ac36a7',
+            'dev_requirement' => false,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.5.3',
+            'version' => '6.5.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'reference' => 'baeb7cde6b60b1286912690ab0693c7789a31e71',
             'dev_requirement' => false,
         ),
         'psr/container' => array(
