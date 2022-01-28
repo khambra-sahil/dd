@@ -5076,3 +5076,14 @@ div.collection-block .block-title-wrap::before {
 		transform: rotate(180deg);
 	}
 }
+#slider .hero{max-height: 88vh;}
+.sm-menu ul a:hover, .sm-menu ul a:focus, .sm-menu ul a:active, .sm-menu ul a.highlighted{color: #e5007d !important;} 
+.path-frontpage .page-wrapper .block {margin-top: 0;}
+.region-content .grid-item{padding-left: 10px;padding-right: 10px;max-height: 420px;}
+.best-seller .owl-item{margin-right: 20px !important;}
+.product-teaser .product-meta {height: 50px;}
+.new_bg h2{margin-top: 30px !important;}
+.btn, input[type="submit"]{padding: 8px 25px;}
+.menu-parent .menu-item {background: #e5007d;}
+.footer-widget .block {padding: 0px 15px 0px 15px;}
+.eapps-instagram-feed-title-container {display: none;}
