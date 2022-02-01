@@ -5103,6 +5103,7 @@ div.collection-block .block-title-wrap::before {
 .sm-menu ul li{float: left;min-width: 81px;}
 
 .navbar{position: fixed;top: 0px;width: 100%;background: #e5007d;z-index: 9999;}
+#header .block, #slider .block {margin-top: 100px;}
 
 
 
