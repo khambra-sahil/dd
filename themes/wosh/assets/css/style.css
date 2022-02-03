@@ -6,6 +6,12 @@ Project:		WOSH DRUPAL 9 THEME
 /*---------------------------------------------------*/
 /*	GENERAL
 /*---------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+.philo-bold{font-family: 'Philosopher', sans-serif;font-weight: 700;}
+.philo-reg{font-family: 'Philosopher', sans-serif;font-weight: 400;}
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -5076,6 +5082,11 @@ div.collection-block .block-title-wrap::before {
 		transform: rotate(180deg);
 	}
 }
+
+
+
+
+
 #slider .hero{max-height: 88vh;}
 .sm-menu ul a:hover, .sm-menu ul a:focus, .sm-menu ul a:active, .sm-menu ul a.highlighted{color: #e5007d !important;} 
 .path-frontpage .page-wrapper .block {margin-top: 0;}
@@ -5102,9 +5113,14 @@ div.collection-block .block-title-wrap::before {
 .sm-menu ul {width: max-content !important;}
 .sm-menu ul li{float: left;min-width: 81px;}
 
-.navbar{position: fixed;top: 0px;width: 100%;background: #e5007d;z-index: 9999;}
+.navbar{width: 100%;background: transparent;z-index: 9999;}
+.header{background: transparent;height: 0;}
+.menu-parent .menu-item {background: transparent !important;}
 
+.section-title{font-size: 26px;font-family: 'Philosopher', sans-serif;font-weight: 700;margin-bottom: 3rem;margin-top: 3rem;}
 
+.sm-menu ul .menu-item a{color: #e5007d !important;}
+.toolbar-oriented .toolbar-bar {z-index: 99999;}
 
 
 
