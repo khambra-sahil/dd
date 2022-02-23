@@ -22,7 +22,7 @@ class ChainLocaleResolverTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  public function setUp() {
     parent::setUp();
     $this->chainLocaleResolver = new ChainLocaleResolver();
   }

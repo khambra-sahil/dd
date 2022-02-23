@@ -18,7 +18,7 @@ class PromotionUsage implements PromotionUsageInterface {
   protected $connection;
 
   /**
-   * Constructs a new PromotionUsage object.
+   * Constructs a PromotionUsage object.
    *
    * @param \Drupal\Core\Database\Connection $connection
    *   The database connection to use.

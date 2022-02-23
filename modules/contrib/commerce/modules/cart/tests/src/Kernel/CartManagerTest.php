@@ -49,7 +49,7 @@ class CartManagerTest extends CartKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->installConfig(['extra_order_item_field']);

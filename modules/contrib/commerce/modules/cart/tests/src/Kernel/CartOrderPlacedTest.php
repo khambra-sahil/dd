@@ -22,7 +22,7 @@ class CartOrderPlacedTest extends CartKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->createUser();

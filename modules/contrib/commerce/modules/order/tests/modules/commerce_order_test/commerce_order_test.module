@@ -20,10 +20,3 @@ function commerce_order_test_field_widget_form_alter(&$element, FormStateInterfa
     \Drupal::state()->set("commerce_order_test_field_widget_form_alter", $order->getAdjustments());
   }
 }
-
-/**
- * Implements hook_theme_registry_alter().
- */
-function commerce_order_test_theme_registry_alter(&$theme_registry) {
-  $theme_registry['commerce_price_calculated']['path'] = drupal_get_path('module', 'commerce_order_test') . '/templates';
-}

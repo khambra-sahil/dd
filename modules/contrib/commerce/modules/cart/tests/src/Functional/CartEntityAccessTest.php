@@ -25,7 +25,7 @@ class CartEntityAccessTest extends CartBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
     user_role_grant_permissions(RoleInterface::ANONYMOUS_ID, ['access checkout']);
   }
@@ -65,8 +65,7 @@ class CartEntityAccessTest extends CartBrowserTestBase {
     $this->assertSession()->statusCodeEquals(403);
 
     // Anonymous active cart.
-    $this->drupalGet('product/' . $this->variation->getProductId());
-    $this->submitForm([], 'Add to cart');
+    $this->drupalPostForm('product/' . $this->variation->getProductId(), [], 'Add to cart');
 
     $this->mink->setDefaultSessionName('default');
     $this->drupalGet('user/0/orders/3');
@@ -126,8 +125,7 @@ class CartEntityAccessTest extends CartBrowserTestBase {
     $this->assertSession()->statusCodeEquals(403);
 
     // Anonymous active cart.
-    $this->drupalGet('product/' . $this->variation->getProductId());
-    $this->submitForm([], 'Add to cart');
+    $this->drupalPostForm('product/' . $this->variation->getProductId(), [], 'Add to cart');
 
     $this->mink->setDefaultSessionName('default');
     $this->drupalGet('user/0/orders/3');
@@ -198,22 +196,15 @@ class CartEntityAccessTest extends CartBrowserTestBase {
 
     $this->drupalLogin($customer);
     foreach ($cart->getEntityType()->getLinkTemplates() as $rel => $link_template) {
-      if ($rel === 'state-transition-form') {
-        continue;
-      }
       $this->drupalGet($cart->toUrl($rel));
       $this->assertSession()->statusCodeEquals(403);
     }
 
     // Anonymous active cart.
     $this->switchSession('anonymous');
-    $this->drupalGet('product/' . $this->variation->getProductId());
-    $this->submitForm([], 'Add to cart');
+    $this->drupalPostForm('product/' . $this->variation->getProductId(), [], 'Add to cart');
     $cart = Order::load(3);
     foreach ($cart->getEntityType()->getLinkTemplates() as $rel => $link_template) {
-      if ($rel === 'state-transition-form') {
-        continue;
-      }
       $this->drupalGet($cart->toUrl($rel));
       $this->assertSession()->statusCodeEquals(403);
     }

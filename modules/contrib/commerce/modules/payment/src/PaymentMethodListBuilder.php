@@ -31,7 +31,6 @@ class PaymentMethodListBuilder extends EntityListBuilder {
     $user = $route->getParameter('user');
 
     $query = $this->getStorage()->getQuery()
-      ->accessCheck(TRUE)
       ->condition('uid', $user->id())
       ->condition('reusable', TRUE)
       ->sort('method_id');

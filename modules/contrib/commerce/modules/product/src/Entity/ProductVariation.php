@@ -419,13 +419,12 @@ class ProductVariation extends CommerceContentEntityBase implements ProductVaria
    *   The generated value.
    */
   protected function generateTitle() {
-    $product = $this->getProduct();
-    if (!$product) {
+    if (!$this->getProductId()) {
       // Title generation is not possible before the parent product is known.
       return '';
     }
 
-    $product_title = $product->getTitle();
+    $product_title = $this->getProduct()->getTitle();
     if ($attribute_values = $this->getAttributeValues()) {
       $attribute_labels = EntityHelper::extractLabels($attribute_values);
       $title = $product_title . ' - ' . implode(', ', $attribute_labels);

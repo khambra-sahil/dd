@@ -29,7 +29,7 @@ abstract class OrderKernelTestBase extends CommerceKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     PhpUnitComparatorFactory::getInstance()->register(new AdjustmentComparator());

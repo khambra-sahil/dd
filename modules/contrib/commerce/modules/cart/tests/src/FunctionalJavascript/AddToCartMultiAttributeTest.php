@@ -16,7 +16,7 @@ class AddToCartMultiAttributeTest extends CartWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     /** @var \Drupal\Core\Entity\Entity\EntityViewDisplay $variation_view_display */

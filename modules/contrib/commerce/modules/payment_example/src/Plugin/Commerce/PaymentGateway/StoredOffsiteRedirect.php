@@ -10,7 +10,6 @@ use Drupal\commerce_payment\PaymentMethodStorageInterface;
 use Drupal\commerce_payment\PaymentMethodTypeManager;
 use Drupal\commerce_payment\PaymentTypeManager;
 use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\SupportsStoredPaymentMethodsInterface;
-use Drupal\commerce_price\MinorUnitsConverterInterface;
 use Drupal\Component\Datetime\TimeInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -59,13 +58,11 @@ class StoredOffsiteRedirect extends OffsiteRedirect implements SupportsStoredPay
    *   The payment method type manager.
    * @param \Drupal\Component\Datetime\TimeInterface $time
    *   The time.
-   * @param \Drupal\commerce_price\MinorUnitsConverterInterface $minor_units_converter
-   *   The minor units converter.
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, PaymentTypeManager $payment_type_manager, PaymentMethodTypeManager $payment_method_type_manager, TimeInterface $time, MinorUnitsConverterInterface $minor_units_converter, MessengerInterface $messenger) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_type_manager, $payment_type_manager, $payment_method_type_manager, $time, $minor_units_converter);
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, EntityTypeManagerInterface $entity_type_manager, PaymentTypeManager $payment_type_manager, PaymentMethodTypeManager $payment_method_type_manager, TimeInterface $time, MessengerInterface $messenger) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $entity_type_manager, $payment_type_manager, $payment_method_type_manager, $time);
     $this->messenger = $messenger;
   }
 
@@ -81,7 +78,6 @@ class StoredOffsiteRedirect extends OffsiteRedirect implements SupportsStoredPay
       $container->get('plugin.manager.commerce_payment_type'),
       $container->get('plugin.manager.commerce_payment_method_type'),
       $container->get('datetime.time'),
-      $container->get('commerce_price.minor_units_converter'),
       $container->get('messenger')
     );
   }

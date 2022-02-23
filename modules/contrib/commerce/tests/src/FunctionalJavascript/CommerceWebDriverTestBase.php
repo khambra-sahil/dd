@@ -67,7 +67,7 @@ abstract class CommerceWebDriverTestBase extends WebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     $this->setErrorHandler();
     parent::setUp();
 

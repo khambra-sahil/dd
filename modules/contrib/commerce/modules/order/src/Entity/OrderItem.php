@@ -452,7 +452,7 @@ class OrderItem extends CommerceContentEntityBase implements OrderItemInterface 
       ->setLabel(t('Adjustments'))
       ->setRequired(FALSE)
       ->setCardinality(BaseFieldDefinition::CARDINALITY_UNLIMITED)
-      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('form', FALSE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['uses_legacy_adjustments'] = BaseFieldDefinition::create('boolean')

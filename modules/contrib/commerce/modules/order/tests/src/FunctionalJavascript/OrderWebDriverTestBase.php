@@ -42,7 +42,7 @@ abstract class OrderWebDriverTestBase extends CommerceWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     // Create a product variation.

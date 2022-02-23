@@ -67,7 +67,7 @@ class DefaultPaymentAdminTest extends CommerceBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $profile = $this->createEntity('profile', [
@@ -164,7 +164,7 @@ class DefaultPaymentAdminTest extends CommerceBrowserTestBase {
     $this->getSession()->getPage()->clickLink('Add payment');
     $this->assertSession()->addressEquals($this->paymentUri . '/add');
     $this->assertSession()->pageTextContains('Visa ending in 1111');
-    $this->assertSession()->checkboxChecked('payment_option');
+    $this->assertSession()->checkboxChecked('payment_method');
 
     $this->getSession()->getPage()->pressButton('Continue');
     $this->submitForm(['payment[amount][number]' => '100'], 'Add payment');

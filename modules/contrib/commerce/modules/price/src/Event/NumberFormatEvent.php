@@ -2,7 +2,7 @@
 
 namespace Drupal\commerce_price\Event;
 
-use Drupal\commerce\EventBase;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Defines the number format event.
@@ -11,7 +11,7 @@ use Drupal\commerce\EventBase;
  *
  * @see \Drupal\commerce_price\Event\PriceEvents
  */
-class NumberFormatEvent extends EventBase {
+class NumberFormatEvent extends Event {
 
   /**
    * The number format.

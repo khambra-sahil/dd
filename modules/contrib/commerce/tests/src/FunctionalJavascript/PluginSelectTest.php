@@ -47,7 +47,7 @@ class PluginSelectTest extends CommerceWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     Role::create(['id' => 'test_role', 'label' => $this->randomString()])->save();

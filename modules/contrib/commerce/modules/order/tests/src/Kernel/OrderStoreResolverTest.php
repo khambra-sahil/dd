@@ -30,7 +30,7 @@ class OrderStoreResolverTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->store2 = $this->createStore('Second store', 'admin2@example.com', 'online', FALSE);

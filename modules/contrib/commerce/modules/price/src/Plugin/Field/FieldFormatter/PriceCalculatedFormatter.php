@@ -119,9 +119,7 @@ class PriceCalculatedFormatter extends PriceDefaultFormatter implements Containe
       $options = $this->getFormattingOptions();
 
       $elements[0] = [
-        '#theme' => 'commerce_price_calculated',
-        '#calculated_price' => $this->currencyFormatter->format($number, $currency_code, $options),
-        '#purchasable_entity' => $purchasable_entity,
+        '#markup' => $this->currencyFormatter->format($number, $currency_code, $options),
         '#cache' => [
           'tags' => $purchasable_entity->getCacheTags(),
           'contexts' => Cache::mergeContexts($purchasable_entity->getCacheContexts(), [

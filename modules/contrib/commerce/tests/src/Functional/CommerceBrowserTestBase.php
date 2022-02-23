@@ -60,7 +60,7 @@ abstract class CommerceBrowserTestBase extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     $this->setErrorHandler();
     parent::setUp();
 

@@ -2,15 +2,15 @@
 
 namespace Drupal\commerce_order\Event;
 
-use Drupal\commerce\EventBase;
 use Drupal\commerce_order\Entity\OrderItemInterface;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Defines the order item event.
  *
  * @see \Drupal\commerce_order\Event\OrderEvents
  */
-class OrderItemEvent extends EventBase {
+class OrderItemEvent extends Event {
 
   /**
    * The order item.

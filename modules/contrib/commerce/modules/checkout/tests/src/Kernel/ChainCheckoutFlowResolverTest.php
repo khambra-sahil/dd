@@ -24,7 +24,7 @@ class ChainCheckoutFlowResolverTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->installConfig('commerce_checkout');

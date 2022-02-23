@@ -55,7 +55,7 @@ class CartTest extends OrderBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->variations = [$this->variation];

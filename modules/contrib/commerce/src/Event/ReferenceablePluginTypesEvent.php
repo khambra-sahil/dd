@@ -2,14 +2,14 @@
 
 namespace Drupal\commerce\Event;
 
-use Drupal\commerce\EventBase;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Defines the referenceable plugin types event.
  *
  * @see \Drupal\commerce\Event\CommerceEvents
  */
-class ReferenceablePluginTypesEvent extends EventBase {
+class ReferenceablePluginTypesEvent extends Event {
 
   /**
    * The plugin types, in the id => label format.

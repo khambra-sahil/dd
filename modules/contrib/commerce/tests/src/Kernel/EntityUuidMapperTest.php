@@ -20,7 +20,7 @@ class EntityUuidMapperTest extends CommerceKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->entityUuidMapper = $this->container->get('commerce.entity_uuid_mapper');

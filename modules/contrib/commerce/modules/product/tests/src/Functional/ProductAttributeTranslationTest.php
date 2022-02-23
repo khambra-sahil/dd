@@ -44,7 +44,7 @@ class ProductAttributeTranslationTest extends ProductBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  public function setUp() {
     parent::setUp();
 
     // Add the French language.

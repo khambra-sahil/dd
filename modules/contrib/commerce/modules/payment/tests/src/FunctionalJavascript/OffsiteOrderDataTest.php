@@ -39,7 +39,7 @@ class OffsiteOrderDataTest extends CommerceWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $variation = $this->createEntity('commerce_product_variation', [

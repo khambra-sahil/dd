@@ -14,7 +14,7 @@ class ProductVariationTypeTest extends ProductBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->createEntity('commerce_product_attribute', [

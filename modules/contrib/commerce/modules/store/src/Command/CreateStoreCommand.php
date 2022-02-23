@@ -19,7 +19,7 @@ use Symfony\Component\Console\Question\Question;
 // @codingStandardsIgnoreEnd
 
 /**
- * Provides a command for creating stores.
+ * Class CreateStoreCommand.
  *
  * @package Drupal\commerce_store
  *

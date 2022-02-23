@@ -33,7 +33,7 @@ class LogCategoryTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
     $this->logCategory = new LogCategory([], 'order', $this->definition);
   }

@@ -26,7 +26,7 @@ class StoreTest extends CommerceKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $user = $this->createUser();
@@ -105,9 +105,9 @@ class StoreTest extends CommerceKernelTestBase {
     // Ensure that we don't store a broken reference to the store owner.
     $store->setOwnerId(900);
     $this->assertTrue($store->getOwner()->isAnonymous());
-    $this->assertEquals(900, $store->getOwnerId());
+    $this->assertEqual($store->getOwnerId(), 900);
     $store->save();
-    $this->assertEquals(0, $store->getOwnerId());
+    $this->assertEqual($store->getOwnerId(), 0);
   }
 
   /**

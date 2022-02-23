@@ -3,9 +3,7 @@
 namespace Drupal\Tests\commerce_payment\Functional;
 
 use Drupal\commerce_payment\Entity\PaymentMethod;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\commerce\Functional\CommerceBrowserTestBase;
-use Drupal\user\Entity\Role;
 
 /**
  * Tests the payment method UI.
@@ -46,7 +44,7 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $permissions = [
@@ -69,27 +67,13 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
   }
 
   /**
-   * Tests accessing the payment method pages.
+   * Tests accessing another user's payment method pages.
    */
-  public function testUserAccess() {
+  public function testDifferentUserAccess() {
     $this->drupalGet('user/' . $this->adminUser->id() . '/payment-methods');
     $this->assertSession()->statusCodeEquals(403);
 
     $this->drupalGet('user/' . $this->adminUser->id() . '/payment-methods/add');
-    $this->assertSession()->statusCodeEquals(403);
-
-    $this->drupalLogout();
-    // Ensure anonymous users don't have access to the manage payment methods
-    // page, even if either the "manage own payment methods" permission or
-    // the "administer commerce_payment_method" is granted.
-    $role = Role::load(AccountInterface::ANONYMOUS_ROLE);
-    $role->grantPermission('manage own commerce_payment_method');
-    $role->grantPermission('administer commerce_payment_method');
-    $role->trustData()->save();
-    $this->drupalGet('user/0/payment-methods');
-    $this->assertSession()->statusCodeEquals(403);
-
-    $this->drupalGet('user/0/payment-methods/add');
     $this->assertSession()->statusCodeEquals(403);
   }
 
@@ -116,21 +100,18 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
     $this->drupalGet($this->collectionUrl);
     $this->getSession()->getPage()->clickLink('Add payment method');
     $this->assertSession()->addressEquals($this->collectionUrl . '/add');
-    $rendered_address = $default_address;
-    // Note that the full country name is rendered (not just the country code).
-    $rendered_address['country_code'] = 'United States';
     // Confirm that the default profile's address is rendered.
-    foreach ($rendered_address as $property => $value) {
-      $prefix = 'add_payment_method[billing_information][address][0][address]';
+    foreach ($default_address as $property => $value) {
+      $prefix = 'payment_method[billing_information][address][0][address]';
       $this->assertSession()->pageTextContains($value);
       $this->assertSession()->fieldNotExists($prefix . '[' . $property . ']');
     }
 
     $form_values = [
-      'add_payment_method[payment_details][number]' => '4111111111111111',
-      'add_payment_method[payment_details][expiration][month]' => '01',
-      'add_payment_method[payment_details][expiration][year]' => date('Y') + 1,
-      'add_payment_method[payment_details][security_code]' => '111',
+      'payment_method[payment_details][number]' => '4111111111111111',
+      'payment_method[payment_details][expiration][month]' => '01',
+      'payment_method[payment_details][expiration][year]' => date('Y') + 1,
+      'payment_method[payment_details][security_code]' => '111',
     ];
     $this->submitForm($form_values, 'Save');
     $this->assertSession()->addressEquals($this->collectionUrl);
@@ -144,8 +125,8 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
 
     $this->drupalGet($this->collectionUrl . '/' . $payment_method->id() . '/edit');
     // Confirm that the default profile's address is rendered.
-    foreach ($rendered_address as $property => $value) {
-      $prefix = 'add_payment_method[billing_information][address][0][address]';
+    foreach ($default_address as $property => $value) {
+      $prefix = 'payment_method[billing_information][address][0][address]';
       $this->assertSession()->pageTextContains($value);
       $this->assertSession()->fieldNotExists($prefix . '[' . $property . ']');
     }
@@ -194,10 +175,10 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
     $this->assertSession()->addressEquals($this->collectionUrl . '/add');
     $this->assertSession()->pageTextNotContains('Country');
     $form_values = [
-      'add_payment_method[payment_details][number]' => '4111111111111111',
-      'add_payment_method[payment_details][expiration][month]' => '01',
-      'add_payment_method[payment_details][expiration][year]' => date('Y') + 1,
-      'add_payment_method[payment_details][security_code]' => '111',
+      'payment_method[payment_details][number]' => '4111111111111111',
+      'payment_method[payment_details][expiration][month]' => '01',
+      'payment_method[payment_details][expiration][year]' => date('Y') + 1,
+      'payment_method[payment_details][security_code]' => '111',
     ];
     $this->submitForm($form_values, 'Save');
     $this->assertSession()->addressEquals($this->collectionUrl);
@@ -233,16 +214,16 @@ class PaymentMethodTest extends CommerceBrowserTestBase {
     $this->assertSession()->addressEquals($this->collectionUrl . '/add');
 
     $form_values = [
-      'add_payment_method[payment_details][number]' => '4111111111111111',
-      'add_payment_method[payment_details][expiration][month]' => '01',
-      'add_payment_method[payment_details][expiration][year]' => date('Y') + 1,
-      'add_payment_method[payment_details][security_code]' => '111',
-      'add_payment_method[billing_information][address][0][address][given_name]' => 'Johnny',
-      'add_payment_method[billing_information][address][0][address][family_name]' => 'Appleseed',
-      'add_payment_method[billing_information][address][0][address][address_line1]' => '123 New York Drive',
-      'add_payment_method[billing_information][address][0][address][locality]' => 'Somewhere',
-      'add_payment_method[billing_information][address][0][address][administrative_area]' => 'WI',
-      'add_payment_method[billing_information][address][0][address][postal_code]' => '53141',
+      'payment_method[payment_details][number]' => '4111111111111111',
+      'payment_method[payment_details][expiration][month]' => '01',
+      'payment_method[payment_details][expiration][year]' => date('Y') + 1,
+      'payment_method[payment_details][security_code]' => '111',
+      'payment_method[billing_information][address][0][address][given_name]' => 'Johnny',
+      'payment_method[billing_information][address][0][address][family_name]' => 'Appleseed',
+      'payment_method[billing_information][address][0][address][address_line1]' => '123 New York Drive',
+      'payment_method[billing_information][address][0][address][locality]' => 'Somewhere',
+      'payment_method[billing_information][address][0][address][administrative_area]' => 'WI',
+      'payment_method[billing_information][address][0][address][postal_code]' => '53141',
     ];
     $this->submitForm($form_values, 'Save');
     $this->assertSession()->addressNotEquals($this->collectionUrl);

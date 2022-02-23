@@ -2,16 +2,16 @@
 
 namespace Drupal\commerce_product\Event;
 
-use Drupal\commerce\EventBase;
 use Drupal\commerce_product\Entity\ProductVariationInterface;
 use Drupal\Core\Ajax\AjaxResponse;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Defines the product variation ajax change event.
  *
  * @see \Drupal\commerce_product\Event\ProductEvents
  */
-class ProductVariationAjaxChangeEvent extends EventBase {
+class ProductVariationAjaxChangeEvent extends Event {
 
   /**
    * The product variation.

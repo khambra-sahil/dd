@@ -96,7 +96,7 @@ class AddressBookTest extends OrderWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     // Log out of the admin user.

@@ -57,7 +57,7 @@ class OrderIntegrationTest extends OrderKernelTestBase implements ServiceModifie
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->installEntitySchema('commerce_log');

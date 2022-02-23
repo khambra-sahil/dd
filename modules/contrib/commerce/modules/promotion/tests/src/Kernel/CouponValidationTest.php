@@ -25,7 +25,7 @@ class CouponValidationTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->installEntitySchema('commerce_promotion_coupon');

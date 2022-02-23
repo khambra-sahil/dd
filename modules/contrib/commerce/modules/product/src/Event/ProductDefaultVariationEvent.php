@@ -2,11 +2,11 @@
 
 namespace Drupal\commerce_product\Event;
 
-use Drupal\commerce\EventBase;
 use Drupal\commerce_product\Entity\ProductInterface;
 use Drupal\commerce_product\Entity\ProductVariationInterface;
+use Symfony\Component\EventDispatcher\Event;
 
-class ProductDefaultVariationEvent extends EventBase {
+class ProductDefaultVariationEvent extends Event {
 
   /**
    * The default product variation or null.

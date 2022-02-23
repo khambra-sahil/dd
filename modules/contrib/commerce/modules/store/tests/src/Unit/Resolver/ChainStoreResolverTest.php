@@ -22,7 +22,7 @@ class ChainStoreResolverTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  public function setUp() {
     parent::setUp();
     $this->resolver = new ChainStoreResolver();
   }

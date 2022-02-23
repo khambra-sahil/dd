@@ -25,7 +25,7 @@ class MailHandlerTest extends CommerceKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->mailHandler = $this->container->get('commerce.mail_handler');

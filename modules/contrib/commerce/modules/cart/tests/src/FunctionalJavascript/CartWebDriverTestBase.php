@@ -53,10 +53,10 @@ abstract class CartWebDriverTestBase extends OrderWebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
-    $this->cart = $this->container->get('commerce_cart.cart_provider')->createCart('default', $this->store);
+    $this->cart = $this->container->get('commerce_cart.cart_provider')->createCart('default');
     $this->cartManager = $this->container->get('commerce_cart.cart_manager');
     $this->attributeFieldManager = $this->container->get('commerce_product.attribute_field_manager');
   }

@@ -170,15 +170,12 @@ class PriceCalculatedFormatter extends PriceDefaultFormatter implements Containe
       $adjustment_types = array_filter($this->getSetting('adjustment_types'));
       $result = $this->priceCalculator->calculate($purchasable_entity, 1, $context, $adjustment_types);
       $calculated_price = $result->getCalculatedPrice();
+      $number = $calculated_price->getNumber();
+      $currency_code = $calculated_price->getCurrencyCode();
       $options = $this->getFormattingOptions();
 
       $elements[0] = [
-        '#theme' => 'commerce_price_calculated',
-        '#result' => $result,
-        '#calculated_price' => $this->currencyFormatter->format($calculated_price->getNumber(), $calculated_price->getCurrencyCode(), $options),
-        '#base_price' => $this->currencyFormatter->format($result->getBasePrice()->getNumber(), $calculated_price->getCurrencyCode(), $options),
-        '#adjustments' => $result->getAdjustments(),
-        '#purchasable_entity' => $purchasable_entity,
+        '#markup' => $this->currencyFormatter->format($number, $currency_code, $options),
         '#cache' => [
           'tags' => $purchasable_entity->getCacheTags(),
           'contexts' => Cache::mergeContexts($purchasable_entity->getCacheContexts(), [

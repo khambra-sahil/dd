@@ -83,11 +83,11 @@ class OrderListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /** @var \Drupal\commerce_order\Entity\OrderInterface $entity  */
-    $order_type = OrderType::load($entity->bundle());
+    /* @var $entity \Drupal\commerce_order\Entity\Order */
+    $orderType = OrderType::load($entity->bundle());
     $row = [
       'order_id' => $entity->id(),
-      'type' => $order_type->label(),
+      'type' => $orderType->label(),
       'customer' => [
         'data' => [
           '#theme' => 'username',

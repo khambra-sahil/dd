@@ -62,7 +62,7 @@ class OrderCollectionFilterTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
     $this->installConfig('user');
     $this->grantPermissions(Role::load(Role::AUTHENTICATED_ID), ['view own commerce_order']);
@@ -122,12 +122,6 @@ class OrderCollectionFilterTest extends OrderKernelTestBase {
     }, $document['data']));
   }
 
-  /**
-   * Data provider for ::testCustomerOrderCollectionFiltering.
-   *
-   * @return \Generator
-   *   The test data.
-   */
   public function filterDataParameters(): \Generator {
     yield [
       'order_customer',

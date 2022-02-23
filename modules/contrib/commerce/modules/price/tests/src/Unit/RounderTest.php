@@ -27,7 +27,7 @@ class RounderTest extends UnitTestCase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  public function setUp() {
     parent::setUp();
 
     $usd_currency = $this->prophesize(CurrencyInterface::class);

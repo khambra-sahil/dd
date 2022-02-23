@@ -4,7 +4,6 @@ namespace Drupal\Tests\commerce_order\Kernel\Entity;
 
 use Drupal\commerce_order\Adjustment;
 use Drupal\commerce_order\Entity\Order;
-use Drupal\commerce_order\Entity\OrderInterface;
 use Drupal\commerce_order\Entity\OrderItem;
 use Drupal\commerce_price\Exception\CurrencyMismatchException;
 use Drupal\commerce_price\Price;
@@ -40,7 +39,7 @@ class OrderTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $user = $this->createUser();
@@ -647,37 +646,6 @@ class OrderTest extends OrderKernelTestBase {
     ]);
     $another_order->save();
     $this->assertEquals(1, $another_order->getData('order_test_called'));
-  }
-
-  /**
-   * Tests that the order email is maintained for authenticated orders.
-   */
-  public function testEmailUpdate() {
-    $order = Order::create([
-      'type' => 'default',
-      'uid' => $this->user->id(),
-      'state' => 'draft',
-    ]);
-    $order->setRefreshState(OrderInterface::REFRESH_ON_LOAD);
-    $order->save();
-    $this->assertEquals($this->user->getEmail(), $order->getEmail());
-
-    // Update user email.
-    $this->user->setEmail('user@example.com');
-    $this->user->save();
-    /** @var \Drupal\commerce_order\Entity\OrderInterface $order */
-    $order = $this->reloadEntity($order);
-    // Order email updated.
-    $this->assertEquals('user@example.com', $order->getEmail());
-
-    // Set an arbitrary email to ensure it's not reverted by the order presave.
-    $order->setEmail('commerce@example.com');
-    $order->setStore($this->store);
-    // The order state is updated to "completed" since the email is maintained
-    // by the order presave logic for draft orders.
-    $order->set('state', 'completed');
-    $order->save();
-    $this->assertEquals('commerce@example.com', $order->getEmail());
   }
 
 }

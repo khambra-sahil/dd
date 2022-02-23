@@ -24,7 +24,7 @@ class OrderQueryAccessHandlerTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     // Create uid: 1 here so that it's skipped in test cases.
@@ -93,7 +93,7 @@ class OrderQueryAccessHandlerTest extends OrderKernelTestBase {
     $this->assertEquals('OR', $conditions->getConjunction());
     $this->assertEquals(1, $conditions->count());
     $this->assertEquals($expected_conditions, $conditions->getConditions());
-    $this->assertEqualsCanonicalizing(['user', 'user.permissions'], $conditions->getCacheContexts());
+    $this->assertEquals(['user', 'user.permissions'], $conditions->getCacheContexts());
     $this->assertFalse($conditions->isAlwaysFalse());
 
     // Bundle permission.

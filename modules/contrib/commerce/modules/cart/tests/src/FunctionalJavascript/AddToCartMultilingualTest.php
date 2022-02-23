@@ -57,7 +57,7 @@ class AddToCartMultilingualTest extends CartWebDriverTestBase {
    *
    * @see \Drupal\Tests\content_translation\Functional\ContentTranslationTestBase
    */
-  protected function setUp(): void {
+  public function setUp() {
     parent::setUp();
 
     $this->setupMultilingual();

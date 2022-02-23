@@ -55,7 +55,7 @@ class AddressBookTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->addressBook = $this->container->get('commerce_order.address_book');

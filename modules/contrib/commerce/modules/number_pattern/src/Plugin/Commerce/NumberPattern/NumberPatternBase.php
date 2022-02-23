@@ -93,7 +93,7 @@ abstract class NumberPatternBase extends PluginBase implements NumberPatternInte
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $entity_type_id = $form_state->get('target_entity_type');
+    $entity_type_id = $form_state->getValue('targetEntityType');
     $token_types = ['pattern'];
     if ($entity_type_id) {
       $token_types[] = $entity_type_id;
@@ -105,7 +105,6 @@ abstract class NumberPatternBase extends PluginBase implements NumberPatternInte
       '#description' => $this->t('Allows adding a prefix (such as "INV-") or a suffix to the number.'),
       '#default_value' => $this->configuration['pattern'],
       '#required' => TRUE,
-      '#maxlength' => NULL,
       '#element_validate' => ['token_element_validate'],
       '#token_types' => $token_types,
     ];

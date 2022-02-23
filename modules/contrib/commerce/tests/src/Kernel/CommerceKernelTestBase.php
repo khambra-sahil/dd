@@ -49,7 +49,7 @@ abstract class CommerceKernelTestBase extends EntityKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
     $this->setErrorHandler();
 

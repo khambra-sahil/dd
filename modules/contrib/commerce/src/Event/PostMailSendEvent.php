@@ -2,7 +2,7 @@
 
 namespace Drupal\commerce\Event;
 
-use Drupal\commerce\EventBase;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Provides the event dispatched after sending emails via the mail handler.
@@ -12,7 +12,7 @@ use Drupal\commerce\EventBase;
  *
  * @see \Drupal\commerce\Event\CommerceEvents
  */
-class PostMailSendEvent extends EventBase {
+class PostMailSendEvent extends Event {
 
   /**
    * The email parameters.

@@ -2,6 +2,7 @@
 
 namespace Drupal\commerce\Plugin\views\filter;
 
+use Drupal\commerce\EntityManagerBridgeTrait;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Plugin\views\filter\Bundle;
 use Drupal\Core\Session\AccountInterface;
@@ -17,6 +18,8 @@ use Drupal\Core\Session\AccountInterface;
  * @ViewsFilter("commerce_entity_bundle")
  */
 class EntityBundle extends Bundle {
+
+  use EntityManagerBridgeTrait;
 
   /**
    * {@inheritdoc}
@@ -69,7 +72,7 @@ class EntityBundle extends Bundle {
       $types = $this->bundleInfoService->getBundleInfo($this->entityTypeId);
       // When the filter is exposed, filter out bundles that the user is
       // not allowed to see. Workaround for core issue #3099068.
-      $storage = $this->entityTypeManager->getStorage($this->entityTypeId);
+      $storage = $this->getEntityTypeManager()->getStorage($this->entityTypeId);
       foreach ($types as $type => $info) {
         if ($this->isExposed()) {
           $stub_entity = $storage->create([
@@ -107,7 +110,7 @@ class EntityBundle extends Bundle {
 
     $bundle_entity_type = $this->entityType->getBundleEntityType();
     if ($bundle_entity_type) {
-      $bundle_entity_storage = $this->entityTypeManager->getStorage($bundle_entity_type);
+      $bundle_entity_storage = $this->getEntityTypeManager()->getStorage($bundle_entity_type);
 
       foreach (array_keys($this->value) as $bundle) {
         if ($bundle_entity = $bundle_entity_storage->load($bundle)) {

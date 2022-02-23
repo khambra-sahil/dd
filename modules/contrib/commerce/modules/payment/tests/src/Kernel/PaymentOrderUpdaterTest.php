@@ -49,13 +49,6 @@ class PaymentOrderUpdaterTest extends OrderKernelTestBase {
   protected $secondOrder;
 
   /**
-   * User's payment method.
-   *
-   * @var \Drupal\commerce_payment\Entity\PaymentMethodInterface
-   */
-  protected $paymentMethod;
-
-  /**
    * Modules to enable.
    *
    * @var array
@@ -69,7 +62,7 @@ class PaymentOrderUpdaterTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp(): void {
+  protected function setUp() {
     parent::setUp();
 
     $this->installEntitySchema('commerce_payment');
@@ -113,7 +106,6 @@ class PaymentOrderUpdaterTest extends OrderKernelTestBase {
     ]);
     $payment_method->setBillingProfile($profile);
     $payment_method->save();
-    $this->paymentMethod = $this->reloadEntity($payment_method);
 
     $first_order_item = OrderItem::create([
       'type' => 'test',
@@ -170,7 +162,6 @@ class PaymentOrderUpdaterTest extends OrderKernelTestBase {
     $first_payment = Payment::create([
       'type' => 'payment_default',
       'payment_gateway' => 'onsite',
-      'payment_method' => $this->paymentMethod->id(),
       'order_id' => $this->firstOrder->id(),
       'amount' => new Price('10', 'USD'),
       'state' => 'completed',
@@ -194,11 +185,6 @@ class PaymentOrderUpdaterTest extends OrderKernelTestBase {
     // hasn't been completed yet.
     $this->assertEquals($first_payment->getAmount(), $this->firstOrder->getTotalPaid());
     $this->assertTrue($this->secondOrder->getTotalPaid()->isZero());
-
-    // Confirm that order payment_gateway and payment_method fields received
-    // values.
-    $this->assertFalse($this->firstOrder->get('payment_gateway')->isEmpty());
-    $this->assertFalse($this->firstOrder->get('payment_method')->isEmpty());
 
     // Confirm that the order is not resaved if total_paid hasn't changed.
     $changed = $this->firstOrder->getChangedTime();
