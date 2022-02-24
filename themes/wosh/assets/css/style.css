@@ -266,6 +266,7 @@ ol, ul {
     font-size: 28px;
 	line-height: 1.1;
     display: block;
+	margin-top: 20px;
 }
 #page-title .block {
 	margin: 0;
@@ -5100,14 +5101,14 @@ div.collection-block .block-title-wrap::before {
 .eapps-instagram-feed-title-container {display: none;}
 .pre-heading-text .field-item{font-weight: 500;}
 #block-views-block-pitara-block-1 .field-content:hover{margin-top: -10px;transition: .4s ease-in;opacity: .7;display: block;}
-.home-pitara .views-field-name {position: relative;border: 2px solid #e5007d;}
+/* .home-pitara .views-field-name {position: relative;border: 2px solid #e5007d;} */
 .home-pitara .views-field-name .field-content a {position: absolute;bottom: 200px;left: 36%;background: rgb(0 0 0 / 72%);color: #fff;padding: 4px 15px;transition: .4s;}
 .home-pitara .views-field-name a{opacity: 0;}
 .home-pitara .grid-item:hover .views-field-name a{opacity: 1;}
 .home-pitara-img{min-height: 900px;}
 .views-field-field-image{min-height: 410px;}
 .footer-logo{margin-top: -58px;margin-bottom: 24px;}
-#page-title{padding: 140px 0;}
+#page-title{padding: 140px 0;background-image: url(./../../../../sites/default/files/images/bg/about_title_bg.png);background-attachment: scroll;}
 
 #sm-16436351531738423-2 li{min-width: 25%;float: left;}
 .sm-menu ul {width: max-content !important;}
@@ -5121,6 +5122,15 @@ div.collection-block .block-title-wrap::before {
 
 .sm-menu ul .menu-item a{color: #e5007d !important;}
 .toolbar-oriented .toolbar-bar {z-index: 99999;}
+
+.product-add-cart {padding: 18px 25px 15px 25px;}
+#block-instagramfeed h2{padding-top:50px;}
+.home-pitara .col-sm-12 img{border-bottom: 4px solid #e5007d;}
+
+.region-page-title{text-transform: uppercase;font-size: 29px;font-family: 'Philosopher', sans-serif;}
+
+
+
 
 
 
@@ -5139,8 +5149,17 @@ div.collection-block .block-title-wrap::before {
 	.product-teaser .post-image img {width: 65%;}
 	.navbar{position: fixed;top: 0px;width: 100%;background: #e5007d;z-index: 9999;}
 	.owl-stage-outer{top:50px;}
+	#slider{top:15px;}
+	.section-title{margin-bottom: 1.5rem;}
+	.home-pitara .views-field-field-image{padding: 0 25px 0 25px;}
+	.home-pitara .col-sm-12{margin-bottom:75px;}
+	.slide-content-body .field-body h2 {font-size: 18px !important;}
+	.product-add-cart {padding: 14px 25px 15px 25px;}
+	#block-instagramfeed h2 {padding-top: 0;}
+	#block-instagramfeed .section-title{margin-top: 10px !important;}
+	.sm-menu ul .menu-item a {color: #ffffff !important;}
+	#main-menu {background-color: #e5007d;}
 
-	
 
 
   }
