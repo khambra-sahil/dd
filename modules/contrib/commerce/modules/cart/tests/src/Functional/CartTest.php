@@ -38,7 +38,7 @@ class CartTest extends OrderBrowserTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'commerce_cart',
     'commerce_checkout',
   ];
@@ -55,7 +55,7 @@ class CartTest extends OrderBrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->variations = [$this->variation];

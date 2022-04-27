@@ -49,7 +49,7 @@ class OrderIntegrationTest extends OrderKernelTestBase implements ServiceModifie
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'commerce_log',
     'commerce_log_test',
   ];
@@ -57,7 +57,7 @@ class OrderIntegrationTest extends OrderKernelTestBase implements ServiceModifie
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('commerce_log');

@@ -39,7 +39,7 @@ class PaymentTest extends OrderKernelTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'commerce_payment',
     'commerce_payment_example',
   ];
@@ -47,7 +47,7 @@ class PaymentTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('commerce_payment');

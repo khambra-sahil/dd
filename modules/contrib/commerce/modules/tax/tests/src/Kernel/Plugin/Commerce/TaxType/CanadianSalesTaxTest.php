@@ -37,14 +37,14 @@ class CanadianSalesTaxTest extends OrderKernelTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'commerce_tax',
   ];
 
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installConfig(['commerce_tax']);
@@ -146,6 +146,7 @@ class CanadianSalesTaxTest extends OrderKernelTestBase {
         'country_code' => 'CA',
       ],
       'prices_include_tax' => FALSE,
+      'tax_registrations' => ['CA'],
     ]);
     $store->save();
     $customer_profile = Profile::create([

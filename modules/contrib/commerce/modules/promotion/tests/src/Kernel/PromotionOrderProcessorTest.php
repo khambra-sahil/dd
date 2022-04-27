@@ -29,7 +29,7 @@ class PromotionOrderProcessorTest extends OrderKernelTestBase {
    *
    * @var array
    */
-  public static $modules = [
+  protected static $modules = [
     'commerce_promotion',
     'language',
     'content_translation',
@@ -38,7 +38,7 @@ class PromotionOrderProcessorTest extends OrderKernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     $this->installEntitySchema('commerce_promotion');
